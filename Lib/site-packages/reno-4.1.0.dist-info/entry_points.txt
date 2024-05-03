@@ -1,0 +1,6 @@
+[console_scripts]
+reno = reno.main:main
+
+[distutils.commands]
+build_reno = reno.setup_command:BuildReno
+

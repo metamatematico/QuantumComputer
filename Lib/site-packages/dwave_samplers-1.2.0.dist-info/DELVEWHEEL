@@ -1,0 +1,2 @@
+Version: 1.5.1
+Arguments: ['C:\\Users\\circleci\\AppData\\Local\\Temp\\cibw-run-nrmc3jsm\\cp38-win_amd64\\build\\venv\\Scripts\\delvewheel', 'repair', '-w', 'C:\\Users\\circleci\\AppData\\Local\\Temp\\cibw-run-nrmc3jsm\\cp38-win_amd64\\repaired_wheel', 'C:\\Users\\circleci\\AppData\\Local\\Temp\\cibw-run-nrmc3jsm\\cp38-win_amd64\\built_wheel\\dwave_samplers-1.2.0-cp38-cp38-win_amd64.whl', '--namespace-pkg', 'dwave']

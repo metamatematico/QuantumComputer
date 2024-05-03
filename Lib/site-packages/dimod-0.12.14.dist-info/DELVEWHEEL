@@ -1,0 +1,2 @@
+Version: 1.5.2
+Arguments: ['C:\\Users\\circleci\\AppData\\Local\\Temp\\cibw-run-kxh0nttj\\cp38-win_amd64\\build\\venv\\Scripts\\delvewheel', 'repair', '-w', 'C:\\Users\\circleci\\AppData\\Local\\Temp\\cibw-run-kxh0nttj\\cp38-win_amd64\\repaired_wheel', 'C:\\Users\\circleci\\AppData\\Local\\Temp\\cibw-run-kxh0nttj\\cp38-win_amd64\\built_wheel\\dimod-0.12.14-cp38-cp38-win_amd64.whl']

@@ -1,0 +1,99 @@
+Metadata-Version: 2.1
+Name: dwavebinarycsp
+Version: 0.3.0
+Summary: Solves constraints satisfaction problems with binary quadratic model samplers
+Home-page: https://github.com/dwavesystems/dwavebinarycsp
+Author: D-Wave Systems Inc.
+Author-email: tools@dwavesys.com
+License: Apache 2.0
+Project-URL: Changes, https://github.com/dwavesystems/dwavebinarycsp/releases
+Project-URL: Documentation, https://docs.ocean.dwavesys.com
+Project-URL: Souce Code, https://github.com/dwavesystems/dwavebinarycsp
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.8
+Description-Content-Type: text/x-rst
+License-File: LICENSE
+Requires-Dist: penaltymodel >=1.0.0
+Requires-Dist: networkx >=2.4
+Requires-Dist: dimod >=0.10.9
+Provides-Extra: maxgap
+Provides-Extra: mip
+
+.. image:: https://img.shields.io/pypi/v/dwavebinarycsp.svg
+    :target: https://pypi.org/project/dwavebinarycsp
+
+.. image:: https://ci.appveyor.com/api/projects/status/b99rhw0l6ljsgw5t?svg=true
+    :target: https://ci.appveyor.com/project/dwave-adtt/dwavebinarycsp
+
+.. image:: https://codecov.io/gh/dwavesystems/dwavebinarycsp/branch/master/graph/badge.svg
+    :target: https://codecov.io/gh/dwavesystems/dwavebinarycsp
+
+.. image:: https://readthedocs.com/projects/d-wave-systems-binarycsp/badge/?version=latest
+    :target: https://docs.ocean.dwavesys.com/projects/binarycsp/en/latest/?badge=latest
+
+.. image:: https://circleci.com/gh/dwavesystems/dwavebinarycsp.svg?style=svg
+    :target: https://circleci.com/gh/dwavesystems/dwavebinarycsp
+
+dwavebinarycsp
+==============
+
+.. index-start-marker
+
+Library to construct a binary quadratic model from a constraint satisfaction problem with
+small constraints over binary variables.
+
+Below is an example usage:
+
+.. code-block:: python
+
+    import dwavebinarycsp
+    import dimod
+
+    csp = dwavebinarycsp.factories.random_2in4sat(8, 4)  # 8 variables, 4 clauses
+
+    bqm = dwavebinarycsp.stitch(csp)
+
+    resp = dimod.ExactSolver().sample(bqm)
+
+    for sample, energy in resp.data(['sample', 'energy']):
+        print(sample, csp.check(sample), energy)
+
+.. index-end-marker
+
+Installation
+------------
+
+.. installation-start-marker
+
+To install:
+
+.. code-block:: bash
+
+    pip install dwavebinarycsp
+
+To build from source:
+
+.. code-block:: bash
+
+    pip install -r requirements.txt
+    python setup.py install
+
+.. installation-end-marker
+
+License
+-------
+
+Released under the Apache License 2.0. See LICENSE file.
+
+Contributing
+------------
+
+Ocean's `contributing guide <https://docs.ocean.dwavesys.com/en/stable/contributing.html>`_
+has guidelines for contributing to Ocean packages.
